@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label alignment="center" text="美女" id="1mc-6m-Esk"/>
+                        <table alignment="left" id="FH8-F9-vs0">
+                            <items>
+                                <tableRow identifier="rowvc" id="ZRP-jY-oVW" customClass="RowVC">
+                                    <group key="rootItem" width="1" height="60" alignment="left" id="fLA-O9-gy9">
+                                        <items>
+                                            <imageView width="72" height="61" alignment="left" contentMode="scaleAspectFit" id="fUR-d3-2ON"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="WF1-E3-I7q"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="xSv-NV-tCp" kind="push" id="7na-6f-Hbf"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="fUR-d3-2ON" id="970-EM-kKj"/>
+                                        <outlet property="lable" destination="WF1-E3-I7q" id="1Jf-G5-hT9"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Button" id="Orw-eu-FSB">
+                            <color key="backgroundColor" red="0.32549019610000002" green="0.84313725490000002" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="btnClick" destination="AgC-eL-Hgc" id="PlW-Yd-Tbs"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="pWB-HZ-pXD">
+                        <items>
+                            <menuItem title="Menu Item" icon="add" id="O9a-bm-XJj">
+                                <connections>
+                                    <action selector="menu1Click" destination="AgC-eL-Hgc" id="WIV-Cg-xNg"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Menu Item" icon="more" id="b9U-qC-nBE">
+                                <connections>
+                                    <action selector="menu2Click" destination="AgC-eL-Hgc" id="evI-eR-dnC"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="btn" destination="Orw-eu-FSB" id="pXR-h7-dia"/>
+                        <outlet property="lable" destination="1mc-6m-Esk" id="qkH-KD-kvB"/>
+                        <outlet property="tableView" destination="FH8-F9-vs0" id="bRf-gL-QW3"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="54" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="67" y="643"/>
+        </scene>
+        <!--Controller01-->
+        <scene sceneID="eJc-ax-oKF">
+            <objects>
+                <controller id="xSv-NV-tCp" customClass="Controller01">
+                    <items>
+                        <label alignment="center" text="Label" id="XKu-rI-O6Q"/>
+                    </items>
+                    <connections>
+                        <outlet property="titleLable" destination="XKu-rI-O6Q" id="KN0-hp-DLF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="478" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="er0-d7-Dfo">
+            <objects>
+                <controller id="4sf-8g-SPF">
+                    <menu key="menu" id="Gc9-eK-L6k">
+                        <items>
+                            <menuItem title="Menu Item01" icon="maybe" id="ulP-zH-ZtA"/>
+                            <menuItem title="Menu Item02" icon="add" id="XtN-bv-Ovf"/>
+                            <menuItem title="Menu Item" id="zDq-BV-gps"/>
+                            <menuItem title="Menu Item" id="GkA-D2-6Xn"/>
+                        </items>
+                    </menu>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="840" y="345"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController">
+                    <items>
+                        <imageView alignment="left" image="01" id="Tlo-gL-1gf"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="369" y="643"/>
+        </scene>
+    </scenes>
+</document>
